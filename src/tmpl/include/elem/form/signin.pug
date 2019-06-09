@@ -1,0 +1,22 @@
+form.form-signin(action="profile.html")
+	.form-group
+		label.col-form-label(for="inputEmail") Your email address
+		input.form-control#inputEmail.is-valid(
+			value="user@mail.com"
+			type="email" 
+			placeholder="Email" 
+			autofocus
+		)
+	.form-group
+		label.col-form-label(for="inputPassword") Your password
+		input.form-control#inputPassword.is-valid(
+			value="123456"
+			type="password" 
+			placeholder="Password"
+		)
+	.form-group
+		.custom-control.custom-checkbox
+			input.custom-control-input#rememberCheck(type="checkbox")
+			label.custom-control-label(for="rememberCheck") Remember me
+			
+	button.btn.btn-lg.btn-info.btn-block.mt-4(type="submit") Sign in
