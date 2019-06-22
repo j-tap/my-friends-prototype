@@ -1,18 +1,30 @@
-header.header
+header.header#header
 	nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
+		button.navbar-toggler#asideNavbarToggle(
+			type="button"
+			aria-controls="asideNavbar"
+			aria-expanded="false"
+			aria-label="Toggle aside"
+		)
+			i(data-feather="more-vertical")
+
 		a.navbar-brand(href="home.html") MyFriends
 		button.navbar-toggler(
-			type="button" 
-			data-toggle="collapse" 
-			data-target="#navbarSupportedContent" 
-			aria-controls="navbarSupportedContent" 
-			aria-expanded="false" 
+			type="button"
+			data-toggle="collapse"
+			data-target="#headerNavbar"
+			aria-controls="headerNavbar"
+			aria-expanded="false"
 			aria-label="Toggle navigation"
 		)
-			span.navbar-toggler-icon
+			i(data-feather="more-horizontal")
 
-		.collapse.navbar-collapse#navbarSupportedContent
+		.collapse.navbar-collapse#headerNavbar
 			ul.navbar-nav.mr-auto
+				li.nav-item.d-lg-none
+					a.nav-link(href="profile.html")
+						img.rounded-circle(src="https://via.placeholder.com/32/29ABE0/ffffff?text=J" alt=" ")
+						span.pl-2 John Doe
 				//- li.nav-item.active
 					a.nav-link(href="home.html")
 						|Home 
@@ -23,16 +35,18 @@ header.header
 					a.nav-link(href="about.html") About
 				li.nav-item
 					a.nav-link(href="news.html") News
+				li.nav-item.d-lg-none
+					a.nav-link(href="index.html") Logout
 
-			ul.navbar-nav.ml-auto
+			ul.navbar-nav.ml-auto.d-none.d-lg-block
 				li.nav-item.dropdown
-					a.nav-link.dropdown-toggle(
+					a.nav-link.dropdown-toggle#navbarDropdownProfile(
 						href="profile.html"
 					)
 						img.rounded-circle(src="https://via.placeholder.com/32/29ABE0/ffffff?text=J" alt=" ")
 						span.pl-2 John Doe
 
-					.dropdown-menu.dropdown-menu-right.py-0(aria-labelledby="navbarDropdown")
+					.dropdown-menu.dropdown-menu-right.py-0(aria-labelledby="navbarDropdownProfile")
 						a.dropdown-item(href="javascript:void()") Action
 						a.dropdown-item(href="javascript:void()") Another action
 						.dropdown-divider

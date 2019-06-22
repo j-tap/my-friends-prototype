@@ -1,10 +1,13 @@
 import '../scss/main.scss';
 
-/* 		Bootstrap Optional	 */
+// import 'popper.js/dist/popper.min.js';
+// import 'popper.js/dist/popper-utils.min.js';
+
+/*  Bootstrap Optional	 */
 import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/alert';
 import 'bootstrap/js/dist/button';
-// import 'bootstrap/js/dist/carousel';
+import 'bootstrap/js/dist/carousel';
 import 'bootstrap/js/dist/collapse';
 import 'bootstrap/js/dist/dropdown';
 import 'bootstrap/js/dist/modal';

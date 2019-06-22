@@ -1,5 +1,15 @@
-aside.aside
-	nav.list-group
-		a.list-group-item.list-group-item-action.active(href="javascript:void(0)") Cras justo odio
-		a.list-group-item.list-group-item-action(href="javascript:void(0)") Dapibus ac facilisis
-		a.list-group-item.list-group-item-action(href="javascript:void(0)") Morbi leo risus
+aside.aside(id="asideNavbar")
+	.aside-nav
+		nav.list-group
+			a.list-group-item.list-group-item-action(href="javascript:void(0)")
+				i(data-feather="user-check")
+				span Friends
+			a.list-group-item.list-group-item-action(href="messages.html")
+				i(data-feather="message-square")
+				span Messages
+			a.list-group-item.list-group-item-action(href="javascript:void(0)")
+				i(data-feather="coffee")
+				span Invites
+			a.list-group-item.list-group-item-action(href="javascript:void(0)")
+				i(data-feather="users")
+				span Users

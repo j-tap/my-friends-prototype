@@ -1,14 +1,20 @@
 /* 		Theme variables	*/
 @import './theme/_variables';
 
-/* 		App variables	*/
-@import './_variables';
-
 /* 		Bootstrap	*/
 @import './_bootstrap';
 
 /* 		Bootstrap Theme style	*/
 @import './theme/_styles';
 
+
 /* 		App style	*/
+@import './_mixins';
+
+/* 		App variables	*/
+@import './_variables';
+
+// Pages
+@import './pages/profile.scss';
+
 @import './_style';
