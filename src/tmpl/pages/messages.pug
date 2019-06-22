@@ -1,9 +1,6 @@
 extends ../include/layout/default.pug
 
 block content
-	.messages
-		ul.list-unstuled
-			li
-				.alert.alert-secondary
-					|Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
-		
+	.messages.mt-4
+		.container-fluid
+			include ../include/elem/user/messages.pug

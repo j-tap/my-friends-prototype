@@ -5,13 +5,13 @@ feather.replace()
 var isTablet
 var isMobile
 
-$(window).resize(function () {
+$(window).resize(() => {
 
 	setEvents()
 
 })
 
-$(document).ready(function () {
+$(document).ready(() => {
 
 	setEvents()
 	

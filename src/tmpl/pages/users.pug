@@ -1,0 +1,25 @@
+extends ../include/layout/default.pug
+
+block content
+	include ../include/elem/user/mixins.pug
+
+	.users-all.mt-4
+		.container-fluid
+			.users-filter
+				p Filters
+		
+			ul.list-unstyled.users-list.row.mt-5
+				li.col-xxxl-3.col-xxl-4.col-md-6.mb-3
+					+userCard(true)
+				li.col-xxxl-3.col-xxl-4.col-md-6.mb-3
+					+userCard(true)
+				li.col-xxxl-3.col-xxl-4.col-md-6.mb-3
+					+userCard(true)
+				li.col-xxxl-3.col-xxl-4.col-md-6.mb-3
+					+userCard(true)
+				li.col-xxxl-3.col-xxl-4.col-md-6.mb-3
+					+userCard(true)
+
+			.list-more-loader.text-center.mt-5.mb-5
+				.spinner-border.text-primary(role='status')
+					span.sr-only Loading...

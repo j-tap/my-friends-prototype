@@ -18,4 +18,5 @@ import 'bootstrap/js/dist/toast';
 import 'bootstrap/js/dist/tooltip';
 
 /* 		Scripts	 */
+import './messages';
 import './script';

@@ -38,6 +38,33 @@ body {
 	}
 }
 
+[class*="badge-outline-"] {
+	background-color: transparent;
+	border: $border-width solid;
+}
+.badge {
+	&-outline-primary {
+		border-color: $primary;
+		color: $primary;
+	}
+	&-outline-success {
+		border-color: $success;
+		color: $success;
+	}
+	&-outline-info {
+		border-color: $info;
+		color: $info;
+	}
+	&-outline-secondary {
+		border-color: $secondary;
+		color: $secondary;
+	}
+	&-outline-light {
+		border-color: $light;
+		color: $light;
+	}
+}
+
 .card {
 	
 }
@@ -140,6 +167,7 @@ body {
 	bottom: 0;
 }
 
+.image-header-abs,
 .image-footer-abs {
 	position: absolute;
 	left: 0;
@@ -147,9 +175,16 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+}
+.image-header-abs {
+	height: $image-header-abs-height;
+	background: linear-gradient(to top, rgba($black, 0) 0%, rgba($black, .1) 60%, rgba($black, .3) 100%);
+	padding: $card-spacer-x $card-spacer-x ($card-spacer-x * 2);
+}
+.image-footer-abs {
+	height: $image-footer-abs-height;
 	padding: ($card-spacer-x * 2) $card-spacer-x $card-spacer-x;
 	background: linear-gradient(to bottom, rgba($black, 0) 0%, rgba($black, .1) 60%, rgba($black, .3) 100%);
-	height: $image-footer-abs-height;
 
 	&.m-abs-md {
 		@include media-breakpoint-down(sm) {
@@ -269,6 +304,11 @@ body {
 			&-item-action {
 				font-weight: 300;
 				padding: 1.5rem;
+				transition: $btn-transition;
+
+				@include hover-focus {
+					
+				}
 				
 				&.active {
 					.feather {
@@ -350,7 +390,35 @@ body {
 		}
 	}
 }
+.card-profile {
 
+	&.m-inner-list {
+
+		.image-footer-abs {
+			transform: translateY($image-footer-abs-height);
+			transition: transform .2s ease;
+		}
+
+		@include hover-focus {
+			.image-footer-abs {
+				transform: translateY(0);
+			}
+		}
+	}
+
+	dl {
+		font-size: 2rem;
+	}
+	dt {
+		color: $secondary;
+		font-weight: inherit;
+	}
+	dd {
+		.btn {
+			margin: 0 .5rem .5rem 0;
+		}
+	}
+}
 .card-media {
 	.card-title {
 		height: calc(#{$h5-font-size} * 2 * #{$headings-line-height});
@@ -367,5 +435,12 @@ body {
 .user-similarity {
 	.progress {
 		height: .7rem;
+	}
+}
+
+.list-more-loader {
+	.spinner-border {
+		width: 5rem;
+		height: 5rem;
 	}
 }
