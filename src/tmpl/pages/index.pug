@@ -4,29 +4,28 @@ block content
 	.bg-main
 		img(src='img/auth-bg.jpg' alt=' ')
 	.container.h-100
-		.row.h-100.align-items-center
-			.col-lg-4.offset-lg-4.col-md-6.offset-md-3.col-sm-8.offset-md-2
-				.card.card--auth
-					.card-header
-						h1.sr-only Authorization
-						ul#authTab.nav.nav-tabs.nav-fill.card-header-tabs(role="tablist")
-							li.nav-item
-								a.nav-link.active#signin-tab(
-									data-toggle="tab" 
-									href="#signin" 
-									role="tab" 
-									aria-controls="signin" 
-									aria-selected="true"
-								) SignIn
-								
-							li.nav-item
-								a.nav-link#signin-tab(
-									data-toggle="tab" 
-									href="#signup" 
-									role="tab" 
-									aria-controls="signup" 
-									aria-selected="true"
-								) SignUp
+		.row.h-100.align-items-center.justify-content-center
+			.card-auth.card
+				.card-header
+					h1.sr-only Authorization
+					ul#authTab.nav.nav-tabs.nav-fill.card-header-tabs(role="tablist")
+						li.nav-item
+							a.nav-link.active#signin-tab(
+								data-toggle="tab" 
+								href="#signin" 
+								role="tab" 
+								aria-controls="signin" 
+								aria-selected="true"
+							) SignIn
+							
+						li.nav-item
+							a.nav-link#signin-tab(
+								data-toggle="tab" 
+								href="#signup" 
+								role="tab" 
+								aria-controls="signup" 
+								aria-selected="true"
+							) SignUp
 
 					.card-body
 						.tab-content#authTabContent

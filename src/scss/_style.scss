@@ -39,18 +39,7 @@ body {
 }
 
 .card {
-	&--auth {
-		.nav-tabs {
-			.nav-link {
-				color: $white;
-				background-color: rgba($dark, 0);
-
-				&.active {
-					background-color: rgba($dark, .6);
-				}
-			}
-		}
-	}
+	
 }
 
 .modal {
@@ -313,7 +302,11 @@ body {
 		margin-left: 0;
 
 		.main {
-			height: calc(100vh - 4rem);
+			height: calc(100vh - (#{$header-height} + #{$foter-height}));
+
+			@include media-breakpoint-down(md) {
+				height: calc(100vh - (#{$header-height-md} + #{$foter-height}));
+			}
 		}
 		& ~ .footer {
 			color: $white;
@@ -339,6 +332,22 @@ body {
 
 	p {
 		margin: 0;
+	}
+}
+
+.card-auth {
+	max-width: calc(100% - 2rem);
+	width: 40rem;
+
+	.nav-tabs {
+		.nav-link {
+			color: $white;
+			background-color: rgba($dark, 0);
+
+			&.active {
+				background-color: rgba($dark, .6);
+			}
+		}
 	}
 }
 
