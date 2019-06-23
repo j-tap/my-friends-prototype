@@ -1,4 +1,5 @@
 $height-messages: calc(100vh - (#{$header-height} + #{$foter-height} + #{map-get($spacers, 4)}));
+$height-messages-md: calc(100vh - (#{$header-height-md} + #{$foter-height} + #{map-get($spacers, 4)}));
 
 .messages {
 	height: $height-messages;
@@ -7,23 +8,32 @@ $height-messages: calc(100vh - (#{$header-height} + #{$foter-height} + #{map-get
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
+
+	@include media-breakpoint-down(md) {
+		height: $height-messages-md;
+	}
+	@include media-breakpoint-down(sm) {
+		margin-left: -($grid-gutter-width / 2);
+		margin-right: -($grid-gutter-width / 2);
+	}
 	
 	&-dialogs {
 		min-width: 25rem;
 		max-width: 34rem;
-		width: 30%;
+		width: 100%;
 		height: 100%;
 		overflow: hidden;
 		position: relative;
+
+		@include media-breakpoint-down(lg) {
+			min-width: 8rem;
+			width: 8rem;
+		}
 		
 		.dialogs-list {
 			height: 100%;
 			overflow-y: scroll;
 			overflow-x: hidden;
-			
-			&.expanded {
-				height: calc(100% - 334px);
-			}
 			
 			.dialog-item {
 				position: relative;
@@ -47,9 +57,16 @@ $height-messages: calc(100vh - (#{$header-height} + #{$foter-height} + #{map-get
 					padding: 1rem;
 					display: flex;
 					align-items: center;
-
+					
+					span {
+						@include media-breakpoint-down(lg) {
+							display: none;
+						}
+					}
 					img {
+						border-radius: $border-radius;
 						width: 4rem;
+						height: auto;
 					}
 				}
 				.dialog-item-msg {
@@ -58,21 +75,15 @@ $height-messages: calc(100vh - (#{$header-height} + #{$foter-height} + #{map-get
 					padding: .5rem 1rem 1.5rem;
 					transition: .8s all ease;
 
-					span {
-						position: initial;
-						border-radius: initial;
-						background: none;
-						border: none;
-						padding: 0 2px 0 0;
-						margin: 0 0 0 1px;
-						opacity: .5;
+					@include media-breakpoint-down(lg) {
+						display: none;
 					}
 				}
 			}
 		}
 	}
 	.messages-chat {
-		width: 70%;
+		width: auto;
 		height: 100%;
 		overflow: hidden;
 		position: relative;
@@ -85,174 +96,95 @@ $height-messages: calc(100vh - (#{$header-height} + #{$foter-height} + #{map-get
 			overflow-x: hidden;
 			
 			.chat-item {
-				clear: both;
-				float: left;
-				margin: 15px 15px 5px 15px;
-				width: calc(100% - 25px);
-				font-size: 0.9em;
-				
-				&:nth-last-child(1) {
-					margin-bottom: 20px;
+				display: flex;
+				align-items: flex-end;
+				padding: 1.5rem;
+				margin: 0;
+				width: 100%;
+
+				@include media-breakpoint-down(sm) {
+					flex-direction: column;
 				}
+				
 				&.sent {
+					justify-content: flex-end;
+
 					img {
-						margin: 6px 8px 0 0;
+						order: 2;
+						margin-left: 1.5rem;
 					}
 					p {
-						
+						order: 1;
+						text-align: right;
 					}
 				}
 				&.replies {
+					justify-content: flex-start;
+
+					@include media-breakpoint-down(sm) {
+						align-items: end;
+					}
+
 					img {
-						float: right;
-						margin: 6px 0 0 8px;
+						border-radius: $border-radius;
+						order: 1;
+						margin-right: 1.5rem;
+
+						@include media-breakpoint-down(sm) {
+							order: 2;
+							margin-top: .5rem;
+						}
 					}
 					p {
-						float: right;
+						order: 2;
+						text-align: left;
+
+						@include media-breakpoint-down(sm) {
+							order: 1;
+						}
 					}
 				}
 				img {
-					width: 22px;
-					//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-					border-radius: 50%;
-					float: left;
+					width: 4rem;
+					height: auto;
+					margin: 0 0 .5rem;
 				}
 				p {
-					display: inline-block;
-					padding: 10px 15px;
-					//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-					border-radius: 20px;
-					max-width: 205px;
-					line-height: 130%;
+					padding: 0;
+					margin: 0;
+					max-width: 100%;
+					width: calc(100% - 20rem);
+
+					@include media-breakpoint-down(sm) {
+						width: 100%;
+					}
 				}
 			}
 		}
-		
+
 		.message-input {
 			position: absolute;
 			bottom: 0;
 			width: 100%;
-			z-index: 99;
-			.wrap {
-				position: relative;
-				input {
-					float: left;
-					border: none;
-					width: calc(100% - 90px);
-					padding: 11px 32px 10px 8px;
-					font-size: 0.8em;
-					
-					&:focus {
-						outline: none;
-					}
-				}
-				.attachment {
-					position: absolute;
-					right: 60px;
-					z-index: 4;
-					margin-top: 10px;
-					font-size: 1.1em;
-					opacity: .5;
-					cursor: pointer;
-					
-					&:hover {
-						opacity: 1;
-					}
-				}
-				button {
-					float: right;
-					border: none;
-					width: 50px;
-					padding: 12px 0;
-					cursor: pointer;
-					
-					&:hover {
-						
-					}
-					&:focus {
-						outline: none;
-					}
-				}
-			}
-		}
-	}
-}
-@media screen and(max-width: 360px) {
-	.messages {
-		width: 100%;
-		height: 100vh;
-	}
-}
-@media screen and(max-width: 735px) {
-	.messages {
-		&-dialogs {
-			width: 58px;
-			min-width: 58px;
+			z-index: 3;
+			padding: 0 0 0 ($grid-gutter-width / 2);
 
-			.dialogs-list {
-				height: calc(100% - 149px);
-				overflow-y: scroll;
-				overflow-x: hidden;
-				ul li.dialog-item {
-					padding: 6px 0 46px 8px;
-					.wrap {
-						width: 100%;
-						img {
-							margin-right: 0;
-						}
-						.meta {
-							display: none;
-						}
-					}
+			@include media-breakpoint-down(sm) {
+				padding-right: ($grid-gutter-width / 2);
+			}
+
+			.form-control {
+				
+				@include hover-focus {
+					
 				}
 			}
-			.dialogs-list::-webkit-scrollbar {
-				display: none;
-			}
-			#bottom-bar button {
-				float: none;
-				width: 100%;
-				padding: 15px 0;
-				&:nth-child(1) {
-					border-right: none;
-					border-bottom: 1px solid $primary;
-				}
-				i {
-					font-size: 1.3em;
-				}
-				span {
-					display: none;
+			.btn {
+				
+				@include hover-focus {
+					
 				}
 			}
 		}
-		.messages-chat {
-			width: calc(100% - 58px);
-			min-width: 300px !important;
-			.messages {
-				max-height: calc(100% - 105px);
-			}
-			.message-input .wrap {
-				input {
-					padding: 15px 32px 16px 8px;
-				}
-				.attachment {
-					margin-top: 17px;
-					right: 65px;
-				}
-				button {
-					padding: 16px 0;
-				}
-			}
-		}
-	}
-}
-@media screen and(min-width: 900px) {
-	.messages .messages-chat {
-		width: calc(100% - 340px);
-	}
-}
-@media screen and(min-width: 735px) {
-	.messages .messages-chat .messages ul li p {
-		max-width: 300px;
 	}
 }

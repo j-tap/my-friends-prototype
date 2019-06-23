@@ -21,11 +21,12 @@ function scrollDown () {
 	}, 'fast');
 }
 function newMessage () {
-	message = $('#messagesField').val();
+	const message = $('#messagesField').val();
 	if ($.trim(message) == '') {
 		return false;
 	}
-	$('<li class="sent"><img src="http://emilcarlsson.se/assets/mikeross.png" alt="" /><p>' + message + '</p></li>').appendTo($('.messages ul'));
+	const elem = $('<li class="chat-item sent"><img src="http://placeimg.com/400/400/people" alt=" "><p>' + message + '</p></li>');
+	elem.appendTo($('#messageChatList'));
 	$('#messagesField').val(null);
 	$('#dialogs .dialog-item.active .dialog-item-msg').html('<span>You: </span>' + message);
 	scrollDown();
