@@ -5,10 +5,11 @@ block content
 
 	.users-all.mt-4
 		.container-fluid
-			.users-filter
-				+usersFilter()
+			.content-head-fix
+				.users-filter
+					+usersFilter()
 		
-			ul.list-unstyled.users-list.row.mt-5
+			ul.list-unstyled.users-list.row
 				li.col-xxxl-3.col-xxl-4.col-md-6.mb-3
 					+userCard(true)
 				li.col-xxxl-3.col-xxl-4.col-md-6.mb-3

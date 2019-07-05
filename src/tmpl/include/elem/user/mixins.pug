@@ -151,3 +151,20 @@ mixin usersFilter ()
 				option Больше 70%
 				option Больше 80%
 				option Больше 90%
+
+		.form-group.pr-5
+			label.d-block(
+				for="fieldInterests"
+			)
+				small.text-secondary Интересы
+			//- input#fieldInterests.form-control
+			select#fieldInterests.selectpicker(
+				data-live-search="true"
+				multiple
+				title="Все"
+			)
+				option development
+				option bike
+				option dogs
+				option travel
+				option lorem ipsum

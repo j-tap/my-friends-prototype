@@ -82,6 +82,44 @@ body {
 	}
 }
 
+.bootstrap-select {
+	
+	&.show {
+		& > .dropdown-toggle {
+		
+			&.bs-placeholder {
+	
+				&.btn-outline-info {
+					color: $white;
+				}
+			}
+		}
+	}
+
+	&:hover,
+	&:focus {
+		& > .dropdown-toggle {
+		
+			&.bs-placeholder {
+	
+				&.btn-outline-info {
+					color: $white;
+				}
+			}
+		}
+	}
+
+	& > .dropdown-toggle {
+		
+		&.bs-placeholder {
+
+			&.btn-outline-info {
+				color: $info;
+			}
+		}
+	}
+}
+
 .modal {
 	
 
@@ -368,6 +406,21 @@ body {
 
 .main {
 	height: 100%;
+}
+
+.content-head-fix {
+	position: fixed;
+	z-index: 4;
+	top: $header-height;
+	left: $aside-width;
+	right: 0;
+	padding: ($grid-gutter-width / 2);
+	height: $content-head-fix-height;
+	background: $body-bg;
+
+	& + * {
+		margin-top: $content-head-fix-height;
+	}
 }
 
 .footer {
