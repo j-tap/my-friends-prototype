@@ -409,17 +409,20 @@ body {
 }
 
 .content-head-fix {
-	position: fixed;
-	z-index: 4;
-	top: $header-height;
-	left: $aside-width;
-	right: 0;
-	padding: ($grid-gutter-width / 2);
-	height: $content-head-fix-height;
 	background: $body-bg;
 
-	& + * {
-		margin-top: $content-head-fix-height;
+	@include media-breakpoint-up(lg) {
+		position: fixed;
+		z-index: 4;
+		top: $header-height;
+		left: $aside-width;
+		right: 0;
+		height: $content-head-fix-height;
+		padding: ($grid-gutter-width / 2);
+
+		& + * {
+			margin-top: $content-head-fix-height;
+		}
 	}
 }
 

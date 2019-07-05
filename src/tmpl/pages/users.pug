@@ -6,7 +6,17 @@ block content
 	.users-all.mt-4
 		.container-fluid
 			.content-head-fix
-				.users-filter
+				button.btn.btn-info.mb-4.d-lg-none(
+					href="#collapseFilter"
+					data-toggle="collapse"
+					role="button"
+					aria-expanded="false"
+					aria-controls="collapseFilter"
+				)
+					i(data-feather="filter")
+					span.ml-3 Фильтр
+
+				#collapseFilter.collapse.users-filter.d-lg-block
 					+usersFilter()
 		
 			ul.list-unstyled.users-list.row

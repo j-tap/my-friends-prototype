@@ -19,6 +19,8 @@ $(document).ready(() => {
 		style: 'btn-outline-info',
 		noneResultsText: 'Результаты не найдены {0}',
 		width: 'fit',
+		selectedTextFormat: 'count > 1',
+		countSelectedText: 'Выбрано {0}',
 	})
 
 	setEvents()

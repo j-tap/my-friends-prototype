@@ -76,8 +76,8 @@ mixin similarValue()
 			span.ml-2 75%
 
 mixin usersFilter ()
-	form.d-flex.align-item-top
-		.form-group.pr-5
+	form.users-filter-form
+		.form-group
 			label.d-block(
 				for="fieldCountry"
 			)
@@ -85,12 +85,12 @@ mixin usersFilter ()
 			select#fieldCountry.selectpicker(
 				data-live-search="true"
 			)
-				option Весь мир
+				option Все
 				option Беларусь
 				option Россия
 				option Украина
 
-		.form-group.pr-5
+		.form-group
 			label.d-block(
 				for="fieldCountry"
 			)
@@ -98,12 +98,12 @@ mixin usersFilter ()
 			select#fieldCountry.selectpicker(
 				data-live-search="true"
 			)
-				option Все города
+				option Все
 				option Москва
 				option Уфа
 				option Екатеринбург
 
-		.form-group.pr-5
+		.form-group
 			label.d-block(
 				for="fieldSex"
 			)
@@ -115,7 +115,7 @@ mixin usersFilter ()
 				option Мужской
 				option Женский
 
-		.form-group.pr-5
+		.form-group
 			label.d-block(
 				for="fieldAgeFrom"
 			)
@@ -137,7 +137,7 @@ mixin usersFilter ()
 						option= i
 					- }
 
-		.form-group.pr-5
+		.form-group
 			label.d-block(
 				for="fieldSimilarity"
 			)
@@ -145,14 +145,14 @@ mixin usersFilter ()
 			select#fieldSimilarity.selectpicker(
 				
 			)
-				option Все
+				option Больше 30%
 				option Больше 50%
 				option Больше 60%
 				option Больше 70%
 				option Больше 80%
 				option Больше 90%
 
-		.form-group.pr-5
+		.form-group
 			label.d-block(
 				for="fieldInterests"
 			)
