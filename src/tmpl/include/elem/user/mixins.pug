@@ -74,3 +74,80 @@ mixin similarValue()
 		.badge.badge-success.font-weight-normal(title="You look like at 75%")
 			i(data-feather="activity")
 			span.ml-2 75%
+
+mixin usersFilter ()
+	form.d-flex.align-item-top
+		.form-group.pr-5
+			label.d-block(
+				for="fieldCountry"
+			)
+				small.text-secondary Страна
+			select#fieldCountry.selectpicker(
+				data-live-search="true"
+			)
+				option Весь мир
+				option Беларусь
+				option Россия
+				option Украина
+
+		.form-group.pr-5
+			label.d-block(
+				for="fieldCountry"
+			)
+				small.text-secondary Город
+			select#fieldCountry.selectpicker(
+				data-live-search="true"
+			)
+				option Все города
+				option Москва
+				option Уфа
+				option Екатеринбург
+
+		.form-group.pr-5
+			label.d-block(
+				for="fieldSex"
+			)
+				small.text-secondary Пол
+			select#fieldSex.selectpicker(
+				
+			)
+				option Любой
+				option Мужской
+				option Женский
+
+		.form-group.pr-5
+			label.d-block(
+				for="fieldAgeFrom"
+			)
+				small.text-secondary Возраст
+			.w-100
+				select#fieldAgeFrom.selectpicker(
+					data-width="auto"
+				)
+					option От
+					- for (let i = 18; i <= 80; ++i) {
+						option= i
+					- }
+				span &nbsp;&ndash;&nbsp;
+				select#fieldAgeTo.selectpicker(
+					data-width="auto"
+				)
+					option До
+					- for (let i = 18; i <= 80; ++i) {
+						option= i
+					- }
+
+		.form-group.pr-5
+			label.d-block(
+				for="fieldSimilarity"
+			)
+				small.text-secondary Схожесть
+			select#fieldSimilarity.selectpicker(
+				
+			)
+				option Все
+				option Больше 50%
+				option Больше 60%
+				option Больше 70%
+				option Больше 80%
+				option Больше 90%

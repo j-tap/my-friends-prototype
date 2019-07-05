@@ -4,9 +4,12 @@
 /* 		Bootstrap	*/
 @import './_bootstrap';
 
+/*  Bootstrap select	 */
+@import './theme/variables-select';
+@import 'bootstrap-select/sass/bootstrap-select.scss';
+
 /* 		Bootstrap Theme style	*/
 @import './theme/_styles';
-
 
 /* 		App style	*/
 @import './_mixins';

@@ -69,6 +69,19 @@ body {
 	
 }
 
+.dropdown-menu {
+	.dropdown-item {
+		font-size: 1.4rem;
+		padding-top: .7rem;
+		padding-bottom: .7rem;
+
+		@include media-breakpoint-down(md) {
+			padding-top: 1.5rem;
+			padding-bottom: 1.5rem;
+		}
+	}
+}
+
 .modal {
 	
 
@@ -250,18 +263,6 @@ body {
 				text-align: center;
 			}
 		}
-		.dropdown-menu {
-			.dropdown-item {
-				font-size: 1.4rem;
-				padding-top: .7rem;
-				padding-bottom: .7rem;
-
-				@include media-breakpoint-down(md) {
-					padding-top: 1.5rem;
-					padding-bottom: 1.5rem;
-				}
-			}
-		}
 	}
 	.navbar-nav {
 		.dropdown-menu {
@@ -298,6 +299,7 @@ body {
 	}
 
 	&-nav {
+		margin-left: -($grid-gutter-width / 2);
 
 		.list-group {
 
@@ -305,6 +307,7 @@ body {
 				font-weight: 300;
 				padding: 1.5rem;
 				transition: $btn-transition;
+				border-left: none;
 
 				@include hover-focus {
 					
@@ -335,6 +338,10 @@ body {
 
 	@include media-breakpoint-down(md) {
 		padding-top: $header-height-md;
+		margin-left: 0;
+	}
+
+	&--wide {
 		margin-left: 0;
 	}
 
@@ -412,8 +419,13 @@ body {
 	dt {
 		color: $secondary;
 		font-weight: inherit;
+		margin-bottom: 1rem;
+		font-size: 80%;
+		line-height: ($font-size-base * 2)
 	}
 	dd {
+		margin-bottom: 1rem;
+
 		.btn {
 			margin: 0 .5rem .5rem 0;
 		}

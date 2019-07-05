@@ -17,6 +17,9 @@ import 'bootstrap/js/dist/tab';
 import 'bootstrap/js/dist/toast';
 import 'bootstrap/js/dist/tooltip';
 
-/* 		Scripts	 */
+/*  Bootstrap select	 */
+import 'bootstrap-select/js/bootstrap-select'
+
+/* 	Scripts	 */
 import './messages';
 import './script';

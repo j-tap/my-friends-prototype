@@ -5,6 +5,8 @@ feather.replace()
 var isTablet
 var isMobile
 
+var scrlTop = 0
+
 $(window).resize(() => {
 
 	setEvents()
@@ -13,9 +15,30 @@ $(window).resize(() => {
 
 $(document).ready(() => {
 
+	$('.selectpicker').selectpicker({
+		style: 'btn-outline-info',
+		noneResultsText: 'Результаты не найдены {0}',
+		width: 'fit',
+	})
+
 	setEvents()
-	
+
+	$(window).scroll(() => {
+		scrlTop = $(window).scrollTop()
+
+		scrlPrlx()
+		scrlLoad()
+	})
+
 })
+
+function scrlLoad (k = 3) {
+	const list = $('.js-scroll-load').prev('ul')
+}
+
+function scrlPrlx (k = 3) {
+	$('.js-prlx').css('margin-top', (parseInt(scrlTop / k)) + 'px')
+}
 
 function setMediaQueryConst () {
 	isTablet = (window.innerWidth < 992)
