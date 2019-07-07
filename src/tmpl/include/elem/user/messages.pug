@@ -91,7 +91,10 @@ section#messages.messages
 		.message-input
 			.d-flex.align-items-center.justify-align-between
 				.w-100
-					input#messagesField.form-control(type="text" placeholder="Write your message...")
+					textarea#messagesField.form-control(
+						type="text"
+						placeholder="Ваше сообщение"
+					)
 				.pl-3
 					button#btnMsgSend.btn.btn-info
 						i(data-feather="send")

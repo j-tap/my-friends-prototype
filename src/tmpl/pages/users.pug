@@ -3,7 +3,7 @@ extends ../include/layout/default.pug
 block content
 	include ../include/elem/user/mixins.pug
 
-	.users-all.mt-4
+	.users-all
 		.container-fluid
 			.content-head-fix
 				button.btn.btn-info.mb-4.d-lg-none(
@@ -20,22 +20,11 @@ block content
 					+usersFilter()
 		
 			ul.list-unstyled.users-list.row
-				li.col-xxxl-3.col-xxl-4.col-md-6.mb-3
-					+userCard(true)
-				li.col-xxxl-3.col-xxl-4.col-md-6.mb-3
-					+userCard(true)
-				li.col-xxxl-3.col-xxl-4.col-md-6.mb-3
-					+userCard(true)
-				li.col-xxxl-3.col-xxl-4.col-md-6.mb-3
-					+userCard(true)
-				li.col-xxxl-3.col-xxl-4.col-md-6.mb-3
-					+userCard(true)
-				li.col-xxxl-3.col-xxl-4.col-md-6.mb-3
-					+userCard(true)
-				li.col-xxxl-3.col-xxl-4.col-md-6.mb-3
-					+userCard(true)
-				li.col-xxxl-3.col-xxl-4.col-md-6.mb-3
-					+userCard(true)
+				- for (let i = 0; i < 10; ++i) {
+					li.col-xxxl-3.col-xxl-4.col-md-6.mb-3
+						.h-100
+							+userCard(true)
+				- }
 
 			.js-scroll-load.list-more-loader.text-center.mt-5.mb-5
 				.spinner-border.text-primary(role='status')

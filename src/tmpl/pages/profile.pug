@@ -12,8 +12,8 @@ block content
 				.d-md-flex
 					.profile-user__card.mb-5.mb-md-0
 						+userCard()
-
-						ul.list-inline.mb-0
+						
+						ul.list-inline.mb-0.mt-5
 							li.list-inline-item.mb-2
 								button.btn.btn-outline-primary
 									i(data-feather="facebook")
@@ -32,7 +32,7 @@ block content
 
 					.flex-grow-1.pl-md-5.position-relative.mt-4
 						.profile-user__landscape-footer.image-footer-abs.m-abs-md.absoute-top
-							a.btn.btn-success(
+							a.btn.btn-primary(
 								title="Offer friendship to John"
 								href="#"
 							)
@@ -206,3 +206,5 @@ block content
 						button.close(type="button" data-dismiss="modal" aria-label="Close")
 							i(data-feather="x" aria-hidden="true")
 							span.sr-only Closed modal
+
+		+inviteModal()

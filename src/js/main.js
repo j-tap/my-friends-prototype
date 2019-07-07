@@ -20,6 +20,9 @@ import 'bootstrap/js/dist/tooltip';
 /*  Bootstrap select	 */
 import 'bootstrap-select/js/bootstrap-select'
 
+/*  Bootstrap datetimepicker	 */
+import 'eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker'
+
 /* 	Scripts	 */
 import './messages';
 import './script';

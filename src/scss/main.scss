@@ -5,8 +5,13 @@
 @import './_bootstrap';
 
 /*  Bootstrap select	 */
-@import './theme/variables-select';
-@import 'bootstrap-select/sass/bootstrap-select.scss';
+@import './theme/bootstrap-select';
+@import '~bootstrap-select/sass/bootstrap-select.scss';
+
+/*  Bootstrap datetimepicker	 */
+// @import '~eonasdan-bootstrap-datetimepicker/src/sass/bootstrap-datetimepicker-build';
+@import '~eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css';
+@import './theme/bootstrap-datetimepicker';
 
 /* 		Bootstrap Theme style	*/
 @import './theme/_styles';

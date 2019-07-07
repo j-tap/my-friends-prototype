@@ -66,7 +66,84 @@ body {
 }
 
 .card {
+	&-invite {
+		.card-header:first-child {
+			background: $info;
+			color: $white;
+		}
+		&.m-disabled {
+			color: $secondary;
+
+			.card-header:first-child {
+				background: $white;
+				color: inherit;
+			}
+		}
+		.card-header:first-child {
+			font-size: 2rem;
+		}
+	}
+	&-auth {
+		max-width: calc(100% - 2rem);
+		width: 40rem;
 	
+		.nav-tabs {
+			.nav-link {
+				color: $white;
+				background-color: rgba($dark, 0);
+	
+				&.active {
+					background-color: rgba($dark, .6);
+				}
+			}
+		}
+	}
+	&-profile {
+	
+		&.m-inner-list {
+	
+			.image-footer-abs {
+				transform: translateY($image-footer-abs-height);
+				transition: transform .2s ease;
+			}
+	
+			@include hover-focus {
+				.image-footer-abs {
+					transform: translateY(0);
+				}
+			}
+		}
+	
+		dl {
+			font-size: 2rem;
+		}
+		dt {
+			color: $secondary;
+			font-weight: inherit;
+			margin-bottom: 1rem;
+			font-size: 80%;
+			line-height: ($font-size-base * 2)
+		}
+		dd {
+			margin-bottom: 1rem;
+	
+			.btn {
+				margin: 0 .5rem .5rem 0;
+			}
+		}
+	}
+	&-media {
+		.card-title {
+			height: calc(#{$h5-font-size} * 2 * #{$headings-line-height});
+			overflow: hidden;
+		}
+		.card-img {
+			min-width: 100%;
+			min-height: 100%;
+			width: auto;
+			height: auto;
+		}
+	}
 }
 
 .dropdown-menu {
@@ -82,46 +159,22 @@ body {
 	}
 }
 
-.bootstrap-select {
-	
-	&.show {
-		& > .dropdown-toggle {
-		
-			&.bs-placeholder {
-	
-				&.btn-outline-info {
-					color: $white;
-				}
-			}
-		}
-	}
-
-	&:hover,
-	&:focus {
-		& > .dropdown-toggle {
-		
-			&.bs-placeholder {
-	
-				&.btn-outline-info {
-					color: $white;
-				}
-			}
-		}
-	}
-
-	& > .dropdown-toggle {
-		
-		&.bs-placeholder {
-
-			&.btn-outline-info {
-				color: $info;
-			}
-		}
-	}
-}
-
 .modal {
-	
+
+	&-header {
+		font-size: 2.4rem;
+		border: none;
+		
+		.close {
+			.feather {
+				width: 3.4rem;
+				height: 3.4rem;
+			}
+		}
+	}
+	&-footer {
+		border: none;
+	}
 
 	&-gallery {
 
@@ -438,68 +491,6 @@ body {
 	}
 }
 
-.card-auth {
-	max-width: calc(100% - 2rem);
-	width: 40rem;
-
-	.nav-tabs {
-		.nav-link {
-			color: $white;
-			background-color: rgba($dark, 0);
-
-			&.active {
-				background-color: rgba($dark, .6);
-			}
-		}
-	}
-}
-.card-profile {
-
-	&.m-inner-list {
-
-		.image-footer-abs {
-			transform: translateY($image-footer-abs-height);
-			transition: transform .2s ease;
-		}
-
-		@include hover-focus {
-			.image-footer-abs {
-				transform: translateY(0);
-			}
-		}
-	}
-
-	dl {
-		font-size: 2rem;
-	}
-	dt {
-		color: $secondary;
-		font-weight: inherit;
-		margin-bottom: 1rem;
-		font-size: 80%;
-		line-height: ($font-size-base * 2)
-	}
-	dd {
-		margin-bottom: 1rem;
-
-		.btn {
-			margin: 0 .5rem .5rem 0;
-		}
-	}
-}
-.card-media {
-	.card-title {
-		height: calc(#{$h5-font-size} * 2 * #{$headings-line-height});
-		overflow: hidden;
-	}
-	.card-img {
-		min-width: 100%;
-		min-height: 100%;
-		width: auto;
-		height: auto;
-	}
-}
-
 .user-similarity {
 	.progress {
 		height: .7rem;
@@ -510,5 +501,32 @@ body {
 	.spinner-border {
 		width: 5rem;
 		height: 5rem;
+	}
+}
+
+
+.user-ava {
+	text-decoration: none;
+	color: inherit;
+	display: flex;
+	align-items: center;
+
+	@include hover-focus {
+		text-decoration: none;
+	}
+	
+	&-img {
+		overflow: hidden;
+		border-radius: $border-radius;
+		width: 6rem;
+		height: 6rem;
+
+		img {
+			
+		}
+	}
+	&-name {
+		font-size: 2rem;
+		margin-left: 1rem;
 	}
 }

@@ -1,6 +1,5 @@
 /* 	Feather-icons icon	 */
 const feather = require('feather-icons')
-feather.replace()
 
 var isTablet
 var isMobile
@@ -15,12 +14,39 @@ $(window).resize(() => {
 
 $(document).ready(() => {
 
+	featherReplaceAndInit()
+
 	$('.selectpicker').selectpicker({
 		style: 'btn-outline-info',
 		noneResultsText: 'Результаты не найдены {0}',
 		width: 'fit',
 		selectedTextFormat: 'count > 1',
 		countSelectedText: 'Выбрано {0}',
+	})
+
+	$('.datetimepicker').datetimepicker({
+		locale: 'ru',
+		format: 'llll', //'D MMMM YYYY - k:mm'
+		icons: {
+			time: 'feather feather-clock',
+            date: 'feather feather-calendar',
+            up: 'feather feather-chevron-up',
+            down: 'feather feather-chevron-down',
+            previous: 'feather feather-chevron-left',
+            next: 'feather feather-chevron-right',
+            today: 'feather feather-crosshair',
+            clear: 'feather feather-trash',
+            close: 'feather feather-x'
+		},
+		minDate: new Date(),
+		widgetPositioning: {
+			horizontal: 'auto',
+            vertical: 'top',
+		},
+		sideBySide: true,
+	})
+	.on('dp.show', function (e) {
+		featherReplaceAndInit()
 	})
 
 	setEvents()
@@ -33,6 +59,14 @@ $(document).ready(() => {
 	})
 
 })
+
+function featherReplaceAndInit () {
+	$('span.feather').each(function () {
+		const icon = $(this).attr('class').replace('feather feather-', '')
+		$(this).replaceWith('<i data-feather="'+icon+'"></i>')
+	})
+	feather.replace()
+}
 
 function scrlLoad (k = 3) {
 	const list = $('.js-scroll-load').prev('ul')
