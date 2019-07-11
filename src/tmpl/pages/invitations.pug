@@ -1,0 +1,16 @@
+extends ../include/layout/default.pug
+
+block content
+	include ../include/elem/user/mixins.pug
+
+	.invitations-all
+		.container-fluid
+			ul.list-unstyled.invitations-list.row.mt-4
+				- for (let i = 0; i < 2; ++i) {
+					li.col-xxxl-3.col-xxl-4.col-md-6.mb-3
+						.h-100
+							+inviteCard()
+				- }
+				li.col-xxxl-3.col-xxl-4.col-md-6.mb-3
+					.h-100
+						+inviteCard(true)

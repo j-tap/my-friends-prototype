@@ -1,0 +1,59 @@
+extends ../include/layout/wide.pug
+
+block content
+	include ../include/elem/user/mixins.pug
+
+	.questionary.mt-4
+		.container-fluid
+			.row
+				.col-xl-4.offset-xl-4.col-lg-6.offset-lg-3.col-md-8.offset-md-2
+					form.questionary-form
+						ul#questTab.nav.nav-tabs(role="tablist")
+							- for (let i = 1; i <= 10; ++i) {
+								li.nav-item
+									a.nav-link(
+										data-toggle="tab"
+										href=`#questTabContent${i}`
+										role="tab"
+										aria-controls=`${i}`
+										aria-selected="true"
+									)= i
+							- }
+						.progress
+							.progress-bar(
+								role="progressbar"
+								aria-valuenow="25"
+								aria-valuemin="0"
+								aria-valuemax="100"
+							)
+
+						#questTabContent.tab-content
+							- for (let i = 1; i <= 10; ++i) {
+								.tab-pane.fade(
+									id=`questTabContent${i}`
+									role="tabpanel"
+									aria-labelledby=`${i}-tab`
+								)
+									.display-4 #{i}. Вопрос название текста
+									.form-group
+										.custom-control.custom-radio
+											input.custom-control-input(
+												id=`quest${i}Field1`
+												type="radio"
+												name=`quest${i}`
+											)
+											label.custom-control-label(for=`quest${i}Field1`) Вариант 1
+
+										.custom-control.custom-radio
+											input.custom-control-input(
+												id=`quest${i}Field2`
+												type="radio"
+												name=`quest${i}`
+											)
+											label.custom-control-label(for=`quest${i}Field2`) Вариант 2
+							- }
+					.questionary-complete
+						.text-center
+							.display-4.mb-3 Спасибо за ответы!
+							p.mb-5 Теперь рекомендации будут более точные
+							a.btn.btn-lg.btn-success(href="users.html") Искать друзей

@@ -1,0 +1,25 @@
+form.form-signin(action="questionary.html")
+	.form-group
+		label(for="fieldSignupName")
+			small Ваше имя
+		input#fieldSignupName.form-control(
+			type="text" 
+			placeholder="Имя" 
+			autofocus
+		)
+	.form-group
+		label(for="fieldSignupEmail")
+			small Ваш Email адрес
+		input#fieldSignupEmail.form-control(
+			type="email" 
+			placeholder="Email"
+		)
+	.form-group
+		label(for="fieldSignupPassword")
+			small Ваш пароль
+		input#fieldSignupPassword.form-control(
+			type="password" 
+			placeholder="Password"
+		
+		)
+	button.btn.btn-lg.btn-success.btn-block.mt-4(type="submit") Зарегистрироваться

@@ -1,0 +1,31 @@
+.users-filter {
+	margin-bottom: ($grid-gutter-width / 2);
+	display: block;
+
+	@include media-breakpoint-up(lg) {
+		&-form {
+			display: flex;
+			align-items: flex-start;
+			// flex-wrap: wrap;
+
+			.form-group {
+				margin-right: ($grid-gutter-width / 2);
+
+				.btn {
+					font-size: $input-btn-font-size-sm;
+					padding: $input-btn-padding-y $input-btn-padding-x-sm;
+				}
+			}
+		}
+	}
+	@include media-breakpoint-up(xl) {
+		&-form {
+			.form-group {
+				.btn {
+					font-size: $input-btn-font-size;
+					padding: $input-btn-padding-y $input-btn-padding-x;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,210 @@
+extends ../include/layout/default.pug
+
+block content
+	include ../include/elem/user/mixins.pug
+	
+	.profile-user
+		.profile-user__img
+			img.js-prlx(src="http://placeimg.com/1920/300/nature" alt=" ")
+
+		.profile-user__info
+			.container-fluid
+				.d-md-flex
+					.profile-user__card.mb-5.mb-md-0
+						+userCard()
+						
+						ul.list-inline.mb-0.mt-5
+							li.list-inline-item.mb-2
+								button.btn.btn-outline-primary
+									i(data-feather="facebook")
+							li.list-inline-item.mb-2
+								button.btn.btn-outline-primary
+									i(data-feather="instagram")
+							li.list-inline-item.mb-2
+								button.btn.btn-outline-primary
+									i(data-feather="youtube")
+							li.list-inline-item.mb-2
+								button.btn.btn-outline-primary
+									i(data-feather="twitter")
+							li.list-inline-item.mb-2
+								button.btn.btn-outline-primary
+									i(data-feather="linkedin")
+
+					.flex-grow-1.pl-md-5.position-relative.mt-4
+						.profile-user__landscape-footer.image-footer-abs.m-abs-md.absoute-top
+							a.btn.btn-primary(
+								title="Offer friendship to John"
+								href="#"
+							)
+								i(data-feather="user-plus")
+								span.ml-2 Предложить дружбу
+
+						+similarLine()
+
+						.row
+							.col-xl-6
+								h2.display-4.text-success Мне нравится
+								ul.list-group.list-group-flush
+									li.list-group-item Cras justo odio
+									li.list-group-item Dapibus ac facilisis in
+									li.list-group-item Morbi leo risus
+									li.list-group-item Porta ac consectetur ac
+									li.list-group-item Vestibulum at eros
+							.col-xl-6
+								h2.display-4.text-warning Мне не&nbsp;нравится
+								ul.list-group.list-group-flush
+									li.list-group-item Cras justo odio
+									li.list-group-item Dapibus ac facilisis in
+									li.list-group-item Morbi leo risus
+									li.list-group-item Porta ac consectetur ac
+									li.list-group-item Vestibulum at eros
+
+				.card.mt-5
+					.card-body
+						h2.display-4 About me
+						p 
+							|Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus velit sed ante egestas semper.
+							|Integer vel mi malesuada, tristique est vitae, vehicula lacus. Mauris ac volutpat felis.
+							|Nulla vitae risus sodales erat faucibus aliquam vitae in turpis.
+							|Nunc ullamcorper nisl vitae lectus sollicitudin, nec sollicitudin est fermentum.
+							|Sed in felis malesuada, lobortis libero ut, auctor arcu. Lorem dolor sit, consectetur adipiscing elit.
+							|Ut nisl ipsum, tempor vitae nunc ut, tempus luctus diam. Etiam consequat suscipit volutpat.
+							|Nullam gravida, ipsum at sollicitudin pretium, metus purus luctus felis, sed bibendum dictum tortor.
+							|Maecenas varius diam ultricies pharetra mattis. Fusce a metus eu nunc aliquet consectetur et ligula.
+							|Ut congue mi non congue vulputate. Aliquam venenatis et ex ac sodales.
+							|Vivamus auctor risus et libero commodo dapibus.
+
+				.row.mt-5
+					.col-xxl-4.col-md-6
+						.card-media.card.mb-3
+							.row.no-gutters
+								.col-md-4
+									.overflow-hidden.h-100
+										img.card-img(src="http://placeimg.com/320/240/tech" alt=" ")
+
+								.col-md-8
+									.card-body
+										h5.card-title
+											.badge.badge-light.float-right.text-primary(title="Films")
+												i(data-feather="film")
+											span The Return of the King
+									
+										ul.list-inline(title="Rate")
+											li.list-inline-item.text-primary
+												i(data-feather="star" class="feather-filled")
+											li.list-inline-item.text-primary
+												i(data-feather="star" class="feather-filled")
+											li.list-inline-item.text-primary
+												i(data-feather="star" class="feather-filled")
+											li.list-inline-item.text-primary
+												i(data-feather="star" class="feather-filled")
+											li.list-inline-item.text-primary
+												i(data-feather="star")
+
+										ul.list-inline.text-muted.small
+											li 1999
+											li USA
+											li Alan Bear
+											li comedy, biography
+
+										.small.text-muted Rated 3 mins ago
+					.col-xxl-4.col-md-6
+						.card-media.card.mb-3
+							.row.no-gutters
+								.col-md-4
+									.d-flex.h-100.w-100.justify-content-center.align-items-center.text-muted.py-5.px-2
+										i(data-feather="image" class="feather-lg")
+
+								.col-md-8
+									.card-body
+										h5.card-title
+											.badge.badge-light.float-right.text-primary(title="Books")
+												i(data-feather="book")
+											span Natural lead-in to additional
+
+										ul.list-inline(title="Rate")
+											li.list-inline-item.text-primary
+												i(data-feather="star" class="feather-filled")
+											li.list-inline-item.text-primary
+												i(data-feather="star")
+											li.list-inline-item.text-primary
+												i(data-feather="star")
+											li.list-inline-item.text-primary
+												i(data-feather="star")
+											li.list-inline-item.text-primary
+												i(data-feather="star")
+
+										ul.list-inline.text-muted.small
+											li 2005
+											li USA
+											li Adam Shoe
+											li drama
+
+										.small.text-muted Rated 3 mins ago
+
+					.col-xxl-4.col-md-6
+						.card-media.card.mb-3
+							.row.no-gutters
+								.col-md-4
+									.d-flex.h-100.w-100.justify-content-center.align-items-center.text-muted.py-5.px-2
+										i(data-feather="image" class="feather-lg")
+
+								.col-md-8
+									.card-body
+										h5.card-title
+											.badge.badge-light.float-right.text-primary(title="Videogames")
+												i(data-feather="monitor")
+											span Natural lead-in to additional
+
+										ul.list-inline(title="Rate")
+											li.list-inline-item.text-primary
+												i(data-feather="star" class="feather-filled")
+											li.list-inline-item.text-primary
+												i(data-feather="star" class="feather-filled")
+											li.list-inline-item.text-primary
+												i(data-feather="star" class="feather-filled")
+											li.list-inline-item.text-primary
+												i(data-feather="star" class="feather-filled")
+											li.list-inline-item.text-primary
+												i(data-feather="star" class="feather-filled")
+
+										ul.list-inline.text-muted.small
+											li 2005
+											li USA
+											li Adam Shoe
+											li drama
+
+										.small.text-muted Rated 3 mins ago
+
+				.mt-5 &nbsp;
+				
+		#userPhotoModal.modal.modal-gallery.fade(
+			tabindex="-1"
+			role="dialog"
+			aria-labelledby="userPhotoModalLabel"
+			aria-hidden="true"
+		)
+			.modal-dialog.modal-xl.modal-dialog-scrollable(role="document")
+				.modal-content
+					.modal-body
+						#carouseluserPhotoModal.carousel.slide.carousel-fade(data-interval="false")
+							.carousel-inner
+								.carousel-item.active
+									img(src="http://placeimg.com/1200/800/animals" alt=" ")
+								.carousel-item
+									img(src="http://placeimg.com/1200/800/people" alt=" ")
+								.carousel-item
+									img(src="http://placeimg.com/1200/800/nature" alt=" ")
+									
+							a.carousel-control-prev(href="#carouseluserPhotoModal" role="button" data-slide="prev")
+								i(data-feather="chevron-left" aria-hidden="true")
+								span.sr-only Previous image
+							a.carousel-control-next(href="#carouseluserPhotoModal" role="button" data-slide="next")
+								i(data-feather="chevron-right" aria-hidden="true")
+								span.sr-only Next image
+
+						button.close(type="button" data-dismiss="modal" aria-label="Close")
+							i(data-feather="x" aria-hidden="true")
+							span.sr-only Closed modal
+
+		+inviteModal()

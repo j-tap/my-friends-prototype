@@ -1,6 +1,30 @@
-@import './theme';
-@import './bootstrap';
+/* 		Theme variables	*/
+@import './theme/_variables';
 
-body {
+/* 		Bootstrap	*/
+@import './_bootstrap';
 
-}
+/*  Bootstrap select	 */
+@import './theme/bootstrap-select';
+@import '~bootstrap-select/sass/bootstrap-select.scss';
+
+/*  Bootstrap datetimepicker	 */
+// @import '~eonasdan-bootstrap-datetimepicker/src/sass/bootstrap-datetimepicker-build';
+@import '~eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css';
+@import './theme/bootstrap-datetimepicker';
+
+/* 		Bootstrap Theme style	*/
+@import './theme/_styles';
+
+/* 		App style	*/
+@import './_mixins';
+
+/* 		App variables	*/
+@import './_variables';
+
+// Pages
+@import './pages/profile';
+@import './pages/users';
+
+@import './messages';
+@import './_style';

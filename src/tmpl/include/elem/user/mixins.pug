@@ -1,0 +1,282 @@
+mixin userCard(innerList, invite)
+	.card-profile.card.border-info(
+		class=innerList ? 'm-inner-list' : ''
+	)
+		.position-relative.overflow-hidden
+			if innerList
+				a(href="profile.html")
+					img.card-img-top(src="http://placeimg.com/400/400/people" alt=" ")
+			else
+				a(data-toggle="modal" href="#userPhotoModal")
+					img.card-img-top(src="http://placeimg.com/400/400/people" alt=" ")
+
+			if innerList
+				.image-header-abs.absoute-top
+					span
+					+similarValue()
+
+			.image-footer-abs.absoute-bottom
+				if invite===false
+					span
+				else
+					a.btn.btn-info(
+						title="Пригласить John ..."
+						href="#modalInvite"
+						data-toggle="modal"
+					)
+						i(data-feather="coffee")
+						span.ml-2 Пригласить
+
+				a.btn.btn-success(
+					title="Написать сообщение John"
+					href="messages.html"
+				)
+					i(data-feather="message-square")
+					span.ml-2 Написать
+		.card-body
+			if innerList
+				h3.text-info John Doe
+			else
+				h1.text-info John Doe
+					
+			dl.row
+				dt.col-xl-4.col-lg-12 Возраст
+				dd.col-xl-8.col-lg-12 23
+				dt.col-xl-4.col-lg-12 Город
+				dd.col-xl-8.col-lg-12
+					i(data-feather="map-pin")
+					span.pl-2 Boston
+				dt.col-xl-4.col-lg-12 Интересы
+				dd.col-xl-8.col-lg-12
+					a.btn.btn-outline-info.btn-sm(href="#") development
+					a.btn.btn-outline-info.btn-sm(href="#") bike
+					a.btn.btn-outline-info.btn-sm(href="#") dogs
+					a.btn.btn-outline-info.btn-sm(href="#") travel
+					a.btn.btn-outline-info.btn-sm(href="#") lorem ipsum
+
+mixin similarLine()
+	.user-similarity.d-flex.align-items-center.mb-5(title="Вы похожи на 75%")
+		.pr-3
+			.display-4.text-right.text-success
+				i(data-feather="activity")
+				span.ml-2 75%
+		.flex-grow-1
+			.progress
+				.progress-bar.bg-success(
+					style="width: 75%" 
+					aria-valuenow="75" 
+					aria-valuemin="0" 
+					aria-valuemax="100"
+				)
+				.progress-bar.bg-warning(
+					style="width: 25%" 
+					aria-valuenow="25" 
+					aria-valuemin="0" 
+					aria-valuemax="100"
+				)
+
+mixin similarValue()
+	.h4
+		.badge.badge-success.font-weight-normal(title="Вы похожи на 75%")
+			i(data-feather="activity")
+			span.ml-2 75%
+
+mixin usersFilter ()
+	form.users-filter-form
+		.form-group
+			label.d-block(
+				for="fieldCountry"
+			)
+				small.text-secondary Страна
+			select#fieldCountry.selectpicker(
+				data-live-search="true"
+			)
+				option Все
+				option Беларусь
+				option Россия
+				option Украина
+
+		.form-group
+			label.d-block(
+				for="fieldCountry"
+			)
+				small.text-secondary Город
+			select#fieldCountry.selectpicker(
+				data-live-search="true"
+			)
+				option Все
+				option Москва
+				option Уфа
+				option Екатеринбург
+
+		.form-group
+			label.d-block(
+				for="fieldSex"
+			)
+				small.text-secondary Пол
+			select#fieldSex.selectpicker(
+				
+			)
+				option Любой
+				option Мужской
+				option Женский
+
+		.form-group
+			label.d-block(
+				for="fieldAgeFrom"
+			)
+				small.text-secondary Возраст
+			.w-100
+				select#fieldAgeFrom.selectpicker(
+					data-width="auto"
+				)
+					option От
+					- for (let i = 18; i <= 80; ++i) {
+						option= i
+					- }
+				span &nbsp;&ndash;&nbsp;
+				select#fieldAgeTo.selectpicker(
+					data-width="auto"
+				)
+					option До
+					- for (let i = 18; i <= 80; ++i) {
+						option= i
+					- }
+
+		.form-group
+			label.d-block(
+				for="fieldSimilarity"
+			)
+				small.text-secondary Схожесть
+			select#fieldSimilarity.selectpicker(
+				
+			)
+				option Больше 30%
+				option Больше 50%
+				option Больше 60%
+				option Больше 70%
+				option Больше 80%
+				option Больше 90%
+
+		.form-group
+			label.d-block(
+				for="fieldInterests"
+			)
+				small.text-secondary Интересы
+			//- input#fieldInterests.form-control
+			select#fieldInterests.selectpicker(
+				data-live-search="true"
+				multiple
+				title="Все"
+			)
+				option development
+				option bike
+				option dogs
+				option travel
+				option lorem ipsum
+
+mixin inviteCard (disabled)
+	.card.card-invite.h-100(
+		class=disabled ? 'm-disabled' : ''
+	)
+		.card-header.text-center
+			if disabled
+				del(title="Завершено") На прогулку
+			else
+				span На прогулку
+			
+		.card-body
+			.mb-4
+				+userAva()
+
+			
+			p.mb-1
+				i(data-feather="clock")
+				span.pl-2
+					span.small Завтра в 
+					if disabled
+						span.small 20:00
+					else
+						b 20:00
+			p.mb-1
+				i(data-feather="map-pin")
+				a.small.pl-2(
+					href="#"
+				) Ул.Ленина 10, парк Победы
+
+			.card-text.small.mt-4 Прогуляемся по парку, можно посидеть в кафе и послушать живую музыку
+			.small.text-muted.mt-4 Вчера в 19:05
+			
+			if !disabled
+				.d-flex.align-items-top.justify-content-between.mt-4
+					button.btn.btn-outline-secondary
+						small Отклонить
+					button.btn.btn-success Принять
+
+mixin userAva ()
+	a.user-ava(
+		href="profile.html"
+	)
+		.user-ava-img
+			img.card-img-top(src="http://placeimg.com/60/60/people" alt=" ")
+		.user-ava-name John Doe
+
+mixin inviteModal ()
+	#modalInvite.modal.fade(
+		tabindex="-1"
+		role="dialog"
+		aria-labelledby="Пригласить"
+		aria-hidden="true"
+	)
+		.modal-dialog(role="document")
+			.modal-content
+				.modal-header
+					.modal-title Отправить приглашение
+					button.close(
+						type="button"
+						data-dismiss="modal"
+						aria-label="Закрыть"
+					)
+						i(data-feather="x")
+				
+				.modal-body
+					form
+						.form-group
+							label.d-block(for="fieldInviteType")
+								small.text-secondary Куда
+							select#fieldInviteType.selectpicker.w-100(
+								data-live-search="true"
+							)
+								option На прогулку
+								option В кино
+								option На концерт
+								option Покататься
+								option В кафе
+								option На выставку
+								option На фестиваль
+								option В спортзал
+								option В гости
+
+						.form-group
+							label.d-block(for="fieldInviteLoc")
+								small.text-secondary Где
+								input#fieldInviteLoc.form-control
+
+						.form-group
+							label.d-block(for="fieldInviteDate")
+								small.text-secondary Когда
+							.input-group
+								input#fieldInviteDate.form-control.datetimepicker
+								.input-group-append
+									.input-group-text
+										i(data-feather="calendar")
+
+						.form-group
+							label.d-block(for="fieldInviteDescr")
+								small.text-secondary Описание
+								textarea#fieldInviteDescr.form-control
+				
+				.modal-footer.justify-content-between
+					button.btn.btn-outline-secondary(data-dismiss="modal")
+						small Отмена
+					button.btn.btn-success Отправить
