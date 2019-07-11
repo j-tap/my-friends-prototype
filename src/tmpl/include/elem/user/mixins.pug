@@ -1,4 +1,4 @@
-mixin userCard(innerList)
+mixin userCard(innerList, invite)
 	.card-profile.card.border-info(
 		class=innerList ? 'm-inner-list' : ''
 	)
@@ -16,13 +16,16 @@ mixin userCard(innerList)
 					+similarValue()
 
 			.image-footer-abs.absoute-bottom
-				a.btn.btn-info(
-					title="Пригласить John ..."
-					href="#modalInvite"
-					data-toggle="modal"
-				)
-					i(data-feather="coffee")
-					span.ml-2 Пригласить
+				if invite===false
+					span
+				else
+					a.btn.btn-info(
+						title="Пригласить John ..."
+						href="#modalInvite"
+						data-toggle="modal"
+					)
+						i(data-feather="coffee")
+						span.ml-2 Пригласить
 
 				a.btn.btn-success(
 					title="Написать сообщение John"
