@@ -1,22 +1,25 @@
 form.form-signin(action="questionary.html")
 	.form-group
-		label.col-form-label(for="inputName") Your name
-		input.form-control#inputName(
+		label(for="fieldSignupName")
+			small Ваше имя
+		input#fieldSignupName.form-control(
 			type="text" 
-			placeholder="Name" 
+			placeholder="Имя" 
 			autofocus
 		)
 	.form-group
-		label.col-form-label(for="inputEmail") Your email address
-		input.form-control#inputEmail(
+		label(for="fieldSignupEmail")
+			small Ваш Email адрес
+		input#fieldSignupEmail.form-control(
 			type="email" 
 			placeholder="Email"
 		)
 	.form-group
-		label.col-form-label(for="inputPassword") Your password
-		input.form-control#inputPassword(
+		label(for="fieldSignupPassword")
+			small Ваш пароль
+		input#fieldSignupPassword.form-control(
 			type="password" 
 			placeholder="Password"
 		
 		)
-	button.btn.btn-lg.btn-success.btn-block.mt-4(type="submit") Sign up for MyFriends
+	button.btn.btn-lg.btn-success.btn-block.mt-4(type="submit") Зарегистрироваться

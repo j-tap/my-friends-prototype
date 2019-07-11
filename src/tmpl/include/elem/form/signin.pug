@@ -1,15 +1,17 @@
 form.form-signin(action="profile.html")
 	.form-group
-		label.col-form-label(for="inputEmail") Your email address
-		input.form-control#inputEmail.is-valid(
+		label(for="fieldSigninEmail")
+			small Ваш Email адрес
+		input#fieldSigninEmail.form-control.is-valid(
 			value="user@mail.com"
 			type="email" 
 			placeholder="Email" 
 			autofocus
 		)
 	.form-group
-		label.col-form-label(for="inputPassword") Your password
-		input.form-control#inputPassword.is-valid(
+		label(for="fieldSigninPassword")
+			small Ваш пароль
+		input#fieldSigninPassword.form-control.is-valid(
 			value="123456"
 			type="password" 
 			placeholder="Password"
@@ -17,6 +19,7 @@ form.form-signin(action="profile.html")
 	.form-group
 		.custom-control.custom-checkbox
 			input.custom-control-input#rememberCheck(type="checkbox")
-			label.custom-control-label(for="rememberCheck") Remember me
+			label.custom-control-label(for="rememberCheck")
+				small Запомнить
 			
-	button.btn.btn-lg.btn-info.btn-block.mt-4(type="submit") Sign in
+	button.btn.btn-lg.btn-info.btn-block.mt-4(type="submit") Войти
