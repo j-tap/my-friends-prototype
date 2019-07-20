@@ -486,6 +486,7 @@ body {
 
 .content-head-fix {
 	background: $body-bg;
+	padding-top: ($grid-gutter-width / 2);
 
 	@include media-breakpoint-up(lg) {
 		position: fixed;
