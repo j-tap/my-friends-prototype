@@ -2,8 +2,22 @@
 	margin-bottom: ($grid-gutter-width / 2);
 	display: block;
 
-	@include media-breakpoint-up(lg) {
-		&-form {
+	&-form {
+		.form-group {
+			.bootstrap-select.fit-width {
+				min-width: 20rem;
+			}
+		}
+
+		@include media-breakpoint-down(sm) {
+			.form-group {
+				.bootstrap-select.fit-width {
+					width: 100% !important;
+				}
+			}
+		}
+
+		@include media-breakpoint-up(lg) {
 			display: flex;
 			align-items: flex-start;
 			// flex-wrap: wrap;
@@ -15,11 +29,12 @@
 					font-size: $input-btn-font-size-sm;
 					padding: $input-btn-padding-y $input-btn-padding-x-sm;
 				}
+				.bootstrap-select.fit-width {
+					min-width: 1px;
+				}
 			}
 		}
-	}
-	@include media-breakpoint-up(xl) {
-		&-form {
+		@include media-breakpoint-up(xl) {
 			.form-group {
 				.btn {
 					font-size: $input-btn-font-size;
