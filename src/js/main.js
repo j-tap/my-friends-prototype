@@ -1,9 +1,10 @@
 import '../scss/main.scss';
 
+import 'jquery/dist/jquery.min';
 // import 'popper.js/dist/popper.min.js';
 // import 'popper.js/dist/popper-utils.min.js';
 
-/*  Bootstrap Optional	 */
+/*  Bootstrap Optional */
 import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/alert';
 import 'bootstrap/js/dist/button';
@@ -17,11 +18,18 @@ import 'bootstrap/js/dist/tab';
 import 'bootstrap/js/dist/toast';
 import 'bootstrap/js/dist/tooltip';
 
-/*  Bootstrap select	 */
+/*  jQuery UI */
+import 'jquery-ui/ui/core'
+import 'jquery-ui/ui/widgets/autocomplete'
+
+/*  Bootstrap select */
 import 'bootstrap-select/js/bootstrap-select'
 
-/*  Bootstrap datetimepicker	 */
+/*  Bootstrap datetimepicker */
 import 'eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker'
+
+/*  Bootstrap tags */
+import 'jquery.tagsinput-revisited/src/jquery.tagsinput-revisited'
 
 /* 	Scripts	 */
 import './messages';

@@ -1,0 +1,84 @@
+extends ../include/layout/default.pug
+
+block content
+	.settings.mt-4
+		.container-fluid
+			.row
+				.col-xl-4.offset-xl-4.col-lg-6.offset-lg-3.col-md-8.offset-md-2
+					form.settings-form.mb-5(
+						action=""
+						method="get"
+					)
+						.form-group
+							label.d-block(
+								for="settingsFieldName"
+							)
+								small.text-secondary Имя
+							input.form-control(
+								id="settingsFieldName"
+								type="text"
+								value="John Doe"
+							)
+						.form-group
+							label.d-block(
+								for="settingsFieldCity"
+							)
+								small.text-secondary Город
+							input.form-control(
+								id="settingsFieldCity"
+								type="text"
+								value="Boston"
+							)
+						.row
+							.col-sm-6
+								.form-group
+									label.d-block(
+										for="settingsFieldAge"
+									)
+										small.text-secondary Возраст
+									select#settingsFieldAge.selectpicker(
+										data-width="100%"
+										title="Выберите"
+									)
+										- for (let i = 18; i <= 80; ++i) {
+											option= i
+										- }
+							.col-sm-6
+								.form-group
+									label.d-block(
+										for="settingsFieldSex"
+									)
+										small.text-secondary Пол
+									select#settingsFieldSex.selectpicker(
+										data-width="100%"
+										title="Выберите"
+									)
+										option Мужской
+										option Женский
+										option Иной
+						.form-group
+							label.d-block(
+								for="settingsFieldInterests"
+							)
+								small.text-secondary Интересы
+							input.form-control.tagsinput.tagsinput-interests(
+								value='development,bike'
+								id="settingsFieldInterests"
+								data-items='[{"id":1,"value":"development"},{"id":2,"value":"bike"},{"id":3,"value":"dogs"},{"id":3,"value":"travel"}]'
+							)
+							small.form-text.text-muted Напишите ваши интересы через запятую
+						.form-group
+							label.d-block(
+								for="settingsFieldText"
+							)
+								small.text-secondary О себе
+							textarea.form-control(
+								id="settingsFieldText"
+							)
+						.d-flex.align-items-center.justify-content-between
+							button.btn.btn-light(
+								onclick="window.history.go(-1); return false;"
+							) Отмена
+							button.btn.btn-success(
+								type="submit"
+							) Сохранить

@@ -4,10 +4,10 @@ mixin userCard(innerList, invite)
 	)
 		.position-relative.overflow-hidden
 			if innerList
-				a(href="profile.html")
+				a.card-img(href="profile.html")
 					img.card-img-top(src="http://placeimg.com/400/400/people" alt=" ")
 			else
-				a(data-toggle="modal" href="#userPhotoModal")
+				a.card-img(data-toggle="modal" href="#userPhotoModal")
 					img.card-img-top(src="http://placeimg.com/400/400/people" alt=" ")
 
 			if innerList
@@ -85,49 +85,48 @@ mixin usersFilter ()
 	form.users-filter-form
 		.form-group
 			label.d-block(
-				for="fieldCountry"
+				for="filterFieldCountry"
 			)
 				small.text-secondary Страна
-			select#fieldCountry.selectpicker(
+			select#filterFieldCountry.selectpicker(
 				data-live-search="true"
+				title="Все"
 			)
-				option Все
 				option Беларусь
 				option Россия
 				option Украина
 
 		.form-group
 			label.d-block(
-				for="fieldCountry"
+				for="filterFieldCountry"
 			)
 				small.text-secondary Город
-			select#fieldCountry.selectpicker(
+			select#filterFieldCountry.selectpicker(
 				data-live-search="true"
+				title="Все"
 			)
-				option Все
 				option Москва
 				option Уфа
 				option Екатеринбург
 
 		.form-group
 			label.d-block(
-				for="fieldSex"
+				for="filterFieldSex"
 			)
 				small.text-secondary Пол
-			select#fieldSex.selectpicker(
-				
+			select#filterFieldSex.selectpicker(
+				title="Все"
 			)
-				option Любой
 				option Мужской
 				option Женский
 
 		.form-group
 			label.d-block(
-				for="fieldAgeFrom"
+				for="filterFieldAgeFrom"
 			)
 				small.text-secondary Возраст
 			.w-100
-				select#fieldAgeFrom.selectpicker(
+				select#filterFieldAgeFrom.selectpicker(
 					data-width="auto"
 				)
 					option От
@@ -135,7 +134,7 @@ mixin usersFilter ()
 						option= i
 					- }
 				span &nbsp;&ndash;&nbsp;
-				select#fieldAgeTo.selectpicker(
+				select#filterFieldAgeTo.selectpicker(
 					data-width="auto"
 				)
 					option До
@@ -145,10 +144,10 @@ mixin usersFilter ()
 
 		.form-group
 			label.d-block(
-				for="fieldSimilarity"
+				for="filterFieldSimilarity"
 			)
 				small.text-secondary Схожесть
-			select#fieldSimilarity.selectpicker(
+			select#filterFieldSimilarity.selectpicker(
 				
 			)
 				option Больше 30%
@@ -160,11 +159,11 @@ mixin usersFilter ()
 
 		.form-group
 			label.d-block(
-				for="fieldInterests"
+				for="filterFieldInterests"
 			)
 				small.text-secondary Интересы
-			//- input#fieldInterests.form-control
-			select#fieldInterests.selectpicker(
+			//- input#filterFieldInterests.form-control
+			select#filterFieldInterests.selectpicker(
 				data-live-search="true"
 				multiple
 				title="Все"
@@ -246,6 +245,7 @@ mixin inviteModal ()
 								small.text-secondary Куда
 							select#fieldInviteType.selectpicker.w-100(
 								data-live-search="true"
+								title="Выберите"
 							)
 								option На прогулку
 								option В кино

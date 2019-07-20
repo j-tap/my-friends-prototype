@@ -90,6 +90,9 @@ body {
 		width: 40rem;
 	
 		.nav-tabs {
+			.nav-item {
+				width: 50%;
+			}
 			.nav-link {
 				color: $white;
 				background-color: rgba($dark, 0);
@@ -101,12 +104,25 @@ body {
 		}
 	}
 	&-profile {
-	
+		
+		.card-img {
+			display: block;
+			overflow: hidden;
+			height: 30rem;
+			width: auto;
+			position: relative;
+
+			img {
+				@include imgAbsCenter();
+			}
+		}
 		&.m-inner-list {
-	
-			.image-footer-abs {
-				transform: translateY($image-footer-abs-height);
-				transition: transform .2s ease;
+			
+			@include media-breakpoint-up(lg) {
+				.image-footer-abs {
+					transform: translateY($image-footer-abs-height);
+					transition: transform .2s ease;
+				}
 			}
 	
 			@include hover-focus {
@@ -387,12 +403,14 @@ body {
 		}
 	}
 
-	& > * {
+	&-inner {
 		padding: ($grid-gutter-width / 2);
+		padding-left: 0;
+		height: 100%;
+		background: $gray-200;
 	}
 
 	&-nav {
-		margin-left: -($grid-gutter-width / 2);
 
 		.list-group {
 
@@ -401,9 +419,12 @@ body {
 				padding: 1.5rem;
 				transition: $btn-transition;
 				border-left: none;
+				border-right: none;
+    			border-top: none;
+				background: transparent;
 
 				@include hover-focus {
-					
+					background: $gray-300;
 				}
 				
 				&.active {
@@ -573,6 +594,7 @@ body {
 		}
 		.progress {
 			margin-bottom: 3rem;
+			height: .4rem;
 		}
 		.tab-content {
 			text-align: center;

@@ -6,12 +6,16 @@
 
 /*  Bootstrap select	 */
 @import './theme/bootstrap-select';
-@import '~bootstrap-select/sass/bootstrap-select.scss';
+@import '~bootstrap-select/sass/bootstrap-select';
 
 /*  Bootstrap datetimepicker	 */
 // @import '~eonasdan-bootstrap-datetimepicker/src/sass/bootstrap-datetimepicker-build';
 @import '~eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css';
 @import './theme/bootstrap-datetimepicker';
+
+/*  Bootstrap tags	 */
+@import '~jquery.tagsinput-revisited/src/jquery.tagsinput-revisited.css';
+@import './theme/bootstrap-tags';
 
 /* 		Bootstrap Theme style	*/
 @import './theme/_styles';

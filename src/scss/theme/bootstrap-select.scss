@@ -51,7 +51,7 @@ $input-alt-color-placeholder: rgba($secondary, .5);
 		&.bs-placeholder {
 
 			&.btn-outline-info {
-				color: $info;
+				color: $input-border-color;
 			}
 		}
 	}

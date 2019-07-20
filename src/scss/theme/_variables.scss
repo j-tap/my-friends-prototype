@@ -8,18 +8,6 @@ $web-font-path: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
 // Color system
 //
 
-$white:    #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #F8F5F0 !default;
-$gray-300: #DFD7CA !default;
-$gray-400: #ced4da !default;
-$gray-500: #98978B !default;
-$gray-600: #8E8C84 !default;
-$gray-700: #495057 !default;
-$gray-800: #3E3F3A !default;
-$gray-900: #212529 !default;
-$black:    #000 !default;
-
 $blue:    #325D88 !default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
@@ -31,8 +19,22 @@ $green:   #02b864 !default;
 $teal:    #20c997 !default;
 $cyan:    #29ABE0 !default;
 
+$white:    #fff !default;
+$gray-dark:#232332 !default;
+$gray:     lighten($gray-dark, 50%) !default;
+$gray-100: lighten($gray, 40%) !default;
+$gray-200: lighten($gray, 30%) !default;
+$gray-300: lighten($gray, 20%) !default;
+$gray-400: lighten($gray, 10%) !default;
+$gray-500: $gray !default;
+$gray-600: lighten($gray-dark, 30%) !default;
+$gray-700: lighten($gray-dark, 20%) !default;
+$gray-800: lighten($gray-dark, 10%) !default;
+$gray-900: $gray-dark !default;
+$black:    #000 !default;
+
 $primary:       $blue !default;
-$secondary:     $gray-600 !default;
+$secondary:     $gray-500 !default;
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $orange !default;
@@ -45,7 +47,9 @@ $yiq-contrasted-threshold:  170 !default;
 // Body
 
 $body-bg:                   $white !default;
-$body-color:                $gray-800 !default;
+$body-color:                $gray-dark !default;
+
+$font-weight-base:  300;
 
 // Links
 
@@ -194,6 +198,8 @@ $input-btn-padding-y: 1rem;
 $input-btn-padding-x: 1.5rem;
 $input-btn-padding-y-lg: 1.5rem;
 $input-btn-padding-x-lg: 1.5rem;
-$input-border-color: $info;
+$input-border-color: $primary;
 
 $spinner-border-width: .2rem;
+
+$text-muted: $gray-500 !default;

@@ -15,40 +15,7 @@ $(window).resize(() => {
 $(document).ready(() => {
 
 	featherReplaceAndInit()
-
-	$('.selectpicker').selectpicker({
-		style: 'btn-outline-info',
-		noneResultsText: 'Результаты не найдены {0}',
-		width: 'fit',
-		selectedTextFormat: 'count > 1',
-		countSelectedText: 'Выбрано {0}',
-	})
-
-	$('.datetimepicker').datetimepicker({
-		locale: 'ru',
-		format: 'llll', //'D MMMM YYYY - k:mm'
-		icons: {
-			time: 'feather feather-clock',
-            date: 'feather feather-calendar',
-            up: 'feather feather-chevron-up',
-            down: 'feather feather-chevron-down',
-            previous: 'feather feather-chevron-left',
-            next: 'feather feather-chevron-right',
-            today: 'feather feather-crosshair',
-            clear: 'feather feather-trash',
-            close: 'feather feather-x'
-		},
-		minDate: new Date(),
-		widgetPositioning: {
-			horizontal: 'auto',
-            vertical: 'top',
-		},
-		sideBySide: true,
-	})
-	.on('dp.show', function (e) {
-		featherReplaceAndInit()
-	})
-
+	initFormFields()
 	setEvents()
 
 	$(window).scroll(() => {
@@ -184,4 +151,85 @@ function setEvents () {
 			.stop(true, true).delay(200).fadeOut(200);
 		})
 	}
+}
+
+function initFormFields () {
+	/* 
+	* jQuery UI
+	*/
+
+	/* 
+	* Select 
+	* https://developer.snapappointments.com/bootstrap-select/
+	*/
+	const selectpickerDefault = {
+		style: 'btn-outline-primary',
+		// iconBase: 'feather',
+		// tickIcon: 'feather-check',
+		width: 'fit',
+		selectedTextFormat: 'count > 1',
+		countSelectedText: 'Выбрано {0}',
+		noneSelectedText: 'Ничего не выбрано',
+		noneResultsText: 'Результаты не найдены {0}',
+	}
+	Object.assign($.fn.selectpicker.Constructor.DEFAULTS, selectpickerDefault)
+	$('select.selectpicker').selectpicker()
+
+	/* 
+	* Datetime 
+	* https://eonasdan.github.io/bootstrap-datetimepicker/
+	*/
+	$('input.datetimepicker').datetimepicker({
+		locale: 'ru',
+		format: 'llll', //'D MMMM YYYY - k:mm'
+		icons: {
+			time: 'feather feather-clock',
+            date: 'feather feather-calendar',
+            up: 'feather feather-chevron-up',
+            down: 'feather feather-chevron-down',
+            previous: 'feather feather-chevron-left',
+            next: 'feather feather-chevron-right',
+            today: 'feather feather-crosshair',
+            clear: 'feather feather-trash',
+            close: 'feather feather-x'
+		},
+		minDate: new Date(),
+		widgetPositioning: {
+			horizontal: 'auto',
+            vertical: 'top',
+		},
+		sideBySide: true,
+		// debug: true,
+	})
+	.on('dp.show', function (e) {
+		featherReplaceAndInit()
+	})
+
+	/* 
+	* Tags 
+	* https://github.com/underovsky/jquery-tagsinput-revisited
+	* https://bootsnipp.com/snippets/exqd3
+	*/
+	$('.tagsinput-interests').each(function () {
+		const items = $(this).data('items') || [];
+		$(this).tagsInput({
+			delimiter: [',',';','|','.'],
+			autocomplete: {source: items},
+			placeholder: 'Добавить увлечение',
+			// unique: true,
+			// minChars: 2,
+			// validationPattern: new RegExp('^[a-zA-Z]+$'),
+			// interactive: true,
+			// maxChars: 20,
+			// limit: 5,
+			// validationPattern: new RegExp('^[a-zA-Z]+$'), // a pattern you can use to validate the input
+			// width: '300px', // standard option is 'auto'
+			// height: '100px', // standard option is 'auto'
+			// hide: true,
+			// removeWithBackspace: true,
+			// onAddTag: callback_function,
+			// onRemoveTag: callback_function,
+			// onChange: callback_function,
+		})
+	})
 }

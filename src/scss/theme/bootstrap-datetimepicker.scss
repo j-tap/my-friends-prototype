@@ -2,3 +2,17 @@
     position: absolute;
     background: $white;
 }
+.bootstrap-datetimepicker-widget.dropdown-menu.timepicker-sbs {
+    width: 50rem;
+}
+.bootstrap-datetimepicker-widget {
+    table {
+        th {
+            color: $secondary;
+        }
+        td.today:before {
+            bottom: 2px;
+            right: 2px;
+        }
+    }
+}

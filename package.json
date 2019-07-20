@@ -38,7 +38,11 @@
     "bootstrap-select": "^1.13.10",
     "eonasdan-bootstrap-datetimepicker": "^4.17.47",
     "feather-icons": "^4.22.1",
+    "i": "^0.3.6",
     "jquery": "^3.4.1",
+    "jquery-ui": "^1.12.1",
+    "jquery.tagsinput-revisited": "^2.0.0",
+    "npm": "^6.10.1",
     "popper.js": "^1.15.0",
     "tempusdominus-bootstrap-4": "^5.1.2"
   }
