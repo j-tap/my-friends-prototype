@@ -559,14 +559,14 @@ body {
 		.nav-tabs {
 			border: none;
 			justify-content: center;
-			margin-bottom: 1rem;
+			margin-bottom: .5rem;
 
 			&::before {
 
 			}
-
 			.nav-item {
-				padding: 0 .5rem;
+				padding: 0 .5rem .5rem;
+    			margin: 0;
 			}
 			.nav-link {
 				padding: .5rem 1rem;
@@ -605,6 +605,11 @@ body {
 		}
 		.display-4 {
 			margin-bottom: 3rem;
+			font-size: 2.6rem;
+
+			@include media-breakpoint-up(md) {
+				font-size: 3.5rem;
+			}
 		}
 		.form-group {
 			display: flex;
@@ -622,16 +627,20 @@ body {
 			.custom-control-label {
 				text-align: center;
 				display: block;
-				height: 20rem;
+				height: 15rem;
 				font-weight: 300;
 				font-size: 2.2rem;
-				line-height: 20rem;
+				line-height: 15rem;
 				cursor: pointer;
 				border: .1rem solid $secondary;
 				color: $dark;
 				background-color: $white;
 				transition: border .2s ease, background .2s ease, color .2s ease;
-				
+
+				@include media-breakpoint-up(md) {
+					height: 20rem;
+					line-height: 20rem;
+				}
 				@include hover-focus {
 					color: $white;
 					border-color: $info;
